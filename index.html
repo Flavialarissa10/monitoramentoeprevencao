@@ -1,1 +1,44 @@
 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FocoRural - Monitoramento e Prevenção de Incêndios</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <h1>FocoRural</h1>
+        <p>Tecnologia e Sustentabilidade contra Incêndios no Campo</p>
+    </header>
+
+    <main class="main-container">
+
+        <section class="card-section" aria-labelledby="titulo-simulador">
+            <h2 id="titulo-simulador">Simulador de Risco Meteorológico</h2>
+            <p>Insira os dados locais para calcular o nível de alerta da sua propriedade rural.</p>
+            
+            <form id="form-simulador" novalidate>
+                <div class="form-group">
+                    <label for="input-temperatura">Temperatura Atual (°C):</label>
+                    <input type="number" id="input-temperatura" placeholder="Ex: 35" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="input-umidade">Umidade Relativa do Ar (%):</label>
+                    <input type="number" id="input-umidade" placeholder="Ex: 20" required>
+                </div>
+
+                <button type="button" id="btn-calcular">Analisar Risco</button>
+            </form>
+
+            <article id="container-mensagem" class="msg-box" aria-live="polite"></article>
+        </section>
+
+        <section class="card-section" aria-labelledby="titulo-prevencao">
+            <h2 id="titulo-prevencao">Manual de Prevenção e Boas Práticas</h2>
+            
+            <article class="artigo-educativo">
+                <h3>Construção de Aceiros</h3>
