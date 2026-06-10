@@ -1,1 +1,184 @@
+/* ==========================================================================
+   1. VARIÁVEIS GLOBAIS (:root) - Identidade Visual e Alto Contraste
+   ========================================================================== */
+:root {
+    /* Cores Principais (Tema Agro/Sustentabilidade/Alerta) */
+    --color-primary: #1b4d3e;       /* Verde Floresta Técnico (Sustentabilidade e Base) */
+    --color-secondary: #e65c00;     /* Laranja Alerta/Chama (Atenção e Focos de Incêndio) */
+    --color-accent: #f4f9f4;        /* Off-White Claro (Fundo para Alto Contraste) */
+    
+    /* Cores de Suporte */
+    --color-dark: #111827;          /* Grafite Escuro para Textos Principais */
+    --color-card-bg: #ffffff;       /* Branco Puro para blocos isolados */
+    --color-error: #dc2626;         /* Vermelho para mensagens de erro em tela */
+    --color-border: #cbd5e1;        /* Cinza claro para divisórias e bordas */
 
+    /* Tipografia e Espaçamento */
+    --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --radius: 8px;                  /* Bordas arredondadas suaves */
+    --transition: all 0.3s ease;    /* Transições suaves para interatividade */
+}
+
+/* ==========================================================================
+   2. RESET GLOBAL (*) - Consistência entre Navegadores
+   ========================================================================== */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-main);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ==========================================================================
+   3. ESTILIZAÇÃO ESTRUTURAL (HTML Semântico)
+   ========================================================================== */
+body {
+    background-color: var(--color-accent);
+    color: var(--color-dark);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: var(--color-primary);
+    color: #ffffff;
+    padding: 2rem 1rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+main {
+    flex: 1;
+    max-width: 1200px;
+    width: 100%;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    display: grid;
+    gap: 2rem;
+}
+
+/* Seções Principais (Cards) */
+section {
+    background-color: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+section h2 {
+    color: var(--color-primary);
+    border-bottom: 3px solid var(--color-secondary);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+/* ==========================================================================
+   4. COMPONENTES DE UI (Formulários, Botões e Alertas)
+   ========================================================================== */
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--color-dark);
+}
+
+input[type="number"], 
+input[type="text"], 
+select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    font-size: 1rem;
+    background-color: #ffffff;
+    transition: var(--transition);
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(27, 77, 62, 0.2);
+}
+
+button {
+    background-color: var(--color-secondary);
+    color: #ffffff;
+    border: none;
+    border-radius: var(--radius);
+    padding: 0.85rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition);
+    width: 100%;
+}
+
+button:hover {
+    background-color: #cc5200; /* Laranja ligeiramente mais escuro no hover */
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Container de Mensagens de Erro (Renderizadas pelo JS) */
+.error-message {
+    background-color: #fee2e2;
+    color: var(--color-error);
+    border: 1px solid #fca5a5;
+    padding: 1rem;
+    border-radius: var(--radius);
+    margin-top: 1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Container de Resultados de Sucesso */
+.result-box {
+    background-color: #e6f4ea;
+    color: var(--color-primary);
+    border: 1px solid #a3cfbb;
+    padding: 1.25rem;
+    border-radius: var(--radius);
+    margin-top: 1.5rem;
+}
+
+/* ==========================================================================
+   5. RODAPÉ (Footer)
+   ========================================================================== */
+footer {
+    background-color: var(--color-dark);
+    color: #ffffff;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    margin-top: auto;
+    font-size: 0.9rem;
+}
+
+footer p {
+    opacity: 0.8;
+}
